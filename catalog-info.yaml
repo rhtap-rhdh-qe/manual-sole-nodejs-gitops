@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: manual-sole-nodejs-gitops
+  description: This is GitOps manifest for manual-sole-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: manual-sole-nodejs
+    janus-idp.io/tekton: manual-sole-nodejs 
+    backstage.io/kubernetes-id: manual-sole-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:manual-sole-nodejs
